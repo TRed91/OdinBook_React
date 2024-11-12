@@ -17,8 +17,6 @@ function Header({user, logoutUser}) {
                 <ul>
                     {!user && <li><a href="login">Login</a></li>}
                     {!user && <li><a href="signup">Sign Up</a></li>}
-                    {user && <li><a href="">Profile</a></li>}
-                    {user && <li><a href="">Posts</a></li>}
                     {user && <li><a onClick={handleLogout}>Logout</a></li>}
                 </ul>
             </nav>
