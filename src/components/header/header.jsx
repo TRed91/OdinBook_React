@@ -1,6 +1,14 @@
 import styles from './header.module.css';
+import {useNavigate} from "react-router-dom";
 
-function Header({user}) {
+function Header({user, logoutUser}) {
+    const navigate = useNavigate();
+
+    const handleLogout = () => {
+        localStorage.removeItem('token');
+        logoutUser();
+        navigate('/login');
+    }
 
     return (
         <header>
@@ -11,7 +19,7 @@ function Header({user}) {
                     {!user && <li><a href="signup">Sign Up</a></li>}
                     {user && <li><a href="">Profile</a></li>}
                     {user && <li><a href="">Posts</a></li>}
-                    {user && <li><a href="">Logout</a></li>}
+                    {user && <li><a onClick={handleLogout}>Logout</a></li>}
                 </ul>
             </nav>
         </header>
