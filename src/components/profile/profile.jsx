@@ -1,4 +1,6 @@
 import {useOutletContext} from "react-router-dom";
+import { GravatarQuickEditorCore } from "@gravatar-com/quick-editor";
+import styles from "./profile.module.css";
 
 function Profile() {
 
@@ -6,15 +8,19 @@ function Profile() {
 
     if (user) {
         return (
-            <div>
-                <h2>{user.userName}'s Profile</h2>
-                <div>
-                    <p>Username: </p>
-                    <p>{user.userName}</p>
+            <div className={styles.profileContainer}>
+                <div className="avatar hero">
+                    <img src={user.avatarUrl} alt=""/>
+                    <h1>{user.userName}</h1>
                 </div>
-                <div>
-                    <p>Email: </p>
-                    <p>{user.email}</p>
+                <div className={styles.profileDetails}>
+                    <div>
+                        <img src="" alt=""/>
+                        <p>{user.email}</p>
+                    </div>
+                    <div className={styles.profilePosts}>
+
+                    </div>
                 </div>
             </div>
         )

@@ -35,7 +35,7 @@ function App() {
         <Header user={user} logoutUser={() => setUser(null)} />
         <section>
             {user && <aside>
-                <Sidebar />
+                <Sidebar user={user} />
             </aside>}
             <main>
                 <Outlet context={[user, setUser]} />

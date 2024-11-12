@@ -72,3 +72,14 @@ button:focus-visible {
     background-color: #f9f9f9;
   }
 }
+
+.avatar {
+  flex: 0 0 20%;
+  display: flex;
+  align-items: center;
+  gap: 1em;
+}
+
+.avatar img {
+  border-radius: 50%;
+}
