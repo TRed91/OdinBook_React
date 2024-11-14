@@ -17,6 +17,8 @@
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+
+  box-sizing: border-box;
 }
 
 a {
@@ -74,7 +76,7 @@ button:focus-visible {
 }
 
 .avatar {
-  flex: 0 0 20%;
+  flex: 0 0 10%;
   display: flex;
   align-items: center;
   gap: 1em;
@@ -82,4 +84,5 @@ button:focus-visible {
 
 .avatar img {
   border-radius: 50%;
+  box-shadow: 0 0 10px white;
 }

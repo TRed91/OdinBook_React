@@ -16,6 +16,11 @@ function Sidebar({user}) {
                         Posts
                     </a>
                 </li>
+                <li>
+                    <a href="community">
+                        Community
+                    </a>
+                </li>
                 {user && <li>
                     <a onClick={() => {
                             new GravatarQuickEditorCore({
@@ -24,7 +29,7 @@ function Sidebar({user}) {
                                 avatarSelector: '#gravatar-avatar',
                                 scope: ['avatars'],
                             }).open()
-                    }}>Change Profile Picture</a>
+                    }}>Change Avatar</a>
                 </li>}
             </ul>
         </>
