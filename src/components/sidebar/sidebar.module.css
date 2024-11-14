@@ -1,6 +1,6 @@
 .sidebarContainer {
     display: flex;
-    align-items: center;
+    align-items: flex-start;
 
     gap: 1rem;
     padding: 1rem;
@@ -9,7 +9,7 @@
 }
 
 .sidebarContainer > li > a {
-    color: white
+    color: white;
 }
 
 .selected {

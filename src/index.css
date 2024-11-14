@@ -76,10 +76,10 @@ button:focus-visible {
 }
 
 .avatar {
-  flex: 0 0 10%;
+  padding: 0.3em;
   display: flex;
   align-items: center;
-  gap: 1em;
+  gap: 1rem;
 }
 
 .avatar img {

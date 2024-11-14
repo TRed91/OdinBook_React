@@ -1,6 +1,8 @@
 import {useOutletContext} from "react-router-dom";
 import styles from "./profile.module.css";
 import {useEffect, useState} from "react";
+import Posts from "../posts/posts.jsx";
+import Avatar from "../avatar/avatar.jsx";
 
 function Profile() {
 
@@ -28,43 +30,20 @@ function Profile() {
                 console.log(err.message);
                 setMessage("Oops! Something went wrong!");
             });
-    }, [])
-
-    const formatDate = (string) => {
-        const date = new Date(string);
-        return `${date.getDay()}/${date.getMonth()}/${date.getFullYear()} - ${date.getHours()}:${date.getMinutes()}`;
-    }
+    }, [user])
 
     if (user) {
         return (
             <div className={styles.profileContainer}>
-                <div className="avatar hero">
-                    <img src={user.avatarUrl} alt=""/>
-                    <h1>{user.userName}</h1>
+                <div className={styles.avatarContainer}>
+                    <Avatar user={user} big={true} />
                 </div>
                 <div className={styles.profileDetails}>
                     <img src="" alt=""/>
                     <p>{user.email}</p>
                 </div>
-                <div className={styles.profilePosts}>
-                {posts.map((post) => (
-                        <div key={post.postId} className={styles.postCard}>
-                            <div className={styles.postText}>
-                                {post.text}
-                            </div>
-                            <div className={styles.postOptions}>
-                                <div className={styles.postTime}>
-                                    {formatDate(post.time)}
-                                </div>
-                                <div>
-                                    Comments: {post._count.comments}
-                                </div>
-                                <div className={styles.postLikes}>
-                                    Likes: {post._count.likes}
-                                </div>
-                            </div>
-                        </div>
-                ))}
+                <div className={styles.postsSection}>
+                    {message.length > 0 ? <p>{message}</p> : <Posts posts={posts} />}
                 </div>
             </div>
         )

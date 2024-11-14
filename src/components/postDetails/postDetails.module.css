@@ -1,0 +1,12 @@
+.postDetailsContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.originalPost {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}

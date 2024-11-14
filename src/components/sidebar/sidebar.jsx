@@ -12,12 +12,12 @@ function Sidebar({user}) {
                     </a>
                 </li>
                 <li>
-                    <a href="posts">
+                    <a href="/posts">
                         Posts
                     </a>
                 </li>
                 <li>
-                    <a href="community">
+                    <a href="/community">
                         Community
                     </a>
                 </li>

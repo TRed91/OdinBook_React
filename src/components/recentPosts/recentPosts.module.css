@@ -1,0 +1,8 @@
+.recentPosts {
+    display: flex;
+    max-height: 75vh;
+}
+
+.recentPosts > * {
+    flex: 0 0 45%;
+}

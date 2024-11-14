@@ -1,56 +1,30 @@
 .profileContainer {
-    height: 90%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.profileDetails {
-    flex: 0 0 10%;
-    font-size: 1.6rem;
-    display: flex;
-    align-items: center;
-}
-
-.profilePosts {
-    flex: 0 0 75%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 1em;
-
-    border-top: 1px solid lightgray;
-    padding-top: 1rem;
-
-    overflow-y: scroll;
-}
-
-.postCard {
     box-sizing: border-box;
-    width: max(50%, 500px);
-    padding: 1rem;
-    border: 1px solid lightgray;
-    border-radius: 0.5rem;
-
+    max-height: 75vh;
     display: flex;
     flex-direction: column;
     gap: 1rem;
+    align-items: center;
+    overflow: hidden;
+    padding: 1em;
 }
 
-.postText {
-    font-size: 1.1rem;
-}
-
-.postOptions {
+.profileDetails {
+    font-size: 1.6rem;
+    width: 100%;
     display: flex;
-    justify-content: space-around;
+    align-items: center;
+    justify-content: center;
+    border-bottom: 1px solid lightgray;
 }
 
-.postTime {
-    font-style: italic;
+.postsSection {
+    overflow: scroll;
+    scrollbar-width: none;
 }
 
-.postLikes {
-    font-size: 1.2rem;
-    font-weight: bold;
+.avatarContainer {
+    display: flex;
+    align-items: center;
+    gap: 1em;
 }

@@ -11,7 +11,7 @@
 }
 
 section {
-  flex : 0 0 65%;
+  flex : 0 0 75%;
   display: flex;
 }
 
@@ -24,5 +24,6 @@ main {
 
 aside {
   flex: 0 0 15%;
+  min-width: 240px;
   background-color: #5688e0;
 }
