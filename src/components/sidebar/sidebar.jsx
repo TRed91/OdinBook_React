@@ -1,5 +1,6 @@
 import styles from './sidebar.module.css';
 import {GravatarQuickEditorCore} from "@gravatar-com/quick-editor";
+import PropTypes from "prop-types";
 
 function Sidebar({user}) {
 
@@ -7,13 +8,18 @@ function Sidebar({user}) {
         <>
             <ul className={styles.sidebarContainer}>
                 <li>
-                    <a href="/">
+                    <a href="/new">
+                        New Post
+                    </a>
+                </li>
+                <li>
+                    <a href={`/profile/${user.userId}`}>
                         Profile
                     </a>
                 </li>
                 <li>
                     <a href="/posts">
-                        Posts
+                        Recent Posts
                     </a>
                 </li>
                 <li>
@@ -34,6 +40,15 @@ function Sidebar({user}) {
             </ul>
         </>
     )
+}
+
+Sidebar.propTypes = {
+    user: PropTypes.shape({
+        userId: PropTypes.number.isRequired,
+        userName: PropTypes.string.isRequired,
+        avatarUrl: PropTypes.string.isRequired,
+        email: PropTypes.string.isRequired,
+    })
 }
 
 export default Sidebar;

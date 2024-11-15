@@ -8,7 +8,7 @@ function RecentPosts() {
     const [ user, setUser ] = useOutletContext();
     const [ userPosts, setUserPosts ] = useState([]);
     const [ followPosts, setFollowPosts ] = useState([]);
-    const [ message, setMessage ] = useState("");
+    const [ message, setMessage ] = useState(null);
 
     useEffect(() => {
         if (user) {
@@ -37,6 +37,7 @@ function RecentPosts() {
 
     return (
         <div className={styles.recentPosts}>
+            {message && <p>{message}</p>}
             <Posts posts={userPosts}/>
             <Posts posts={followPosts}/>
         </div>

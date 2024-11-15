@@ -1,0 +1,27 @@
+.userCard {
+    padding: 1em;
+    display: flex;
+    justify-content: space-between;
+    gap: 0.5em;
+    border-radius: 0.5em;
+    box-shadow: 0 0 0.5em #4b68a1;
+}
+
+.userCardContainer {
+    padding: 1em;
+
+    width: 30%;
+
+    align-self: flex-start;
+
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+
+    gap: 1em;
+}
+
+.cardButtonContainer {
+    display: flex;
+    gap: 1rem;
+}

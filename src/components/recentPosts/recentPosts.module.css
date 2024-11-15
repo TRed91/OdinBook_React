@@ -1,8 +1,11 @@
 .recentPosts {
+    box-sizing: border-box;
     display: flex;
+    width: 90%;
     max-height: 75vh;
 }
 
 .recentPosts > * {
     flex: 0 0 45%;
+    min-width: 350px;
 }

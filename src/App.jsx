@@ -23,7 +23,7 @@ function App() {
                 .then(res => res.json())
                 .then(data => {
                     if (data.ok) {
-                        setUser(data.data)
+                        setUser(data.data);
                     }
                 })
                 .catch(err => console.log(err));
