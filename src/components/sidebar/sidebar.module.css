@@ -10,9 +10,30 @@
 
 .sidebarContainer > li > a {
     color: white;
+    display: flex;
+    gap: 0.5rem;
 }
 
 .selected {
     font-weight: bold;
     text-decoration: underline;
+}
+
+.pendingFollows {
+    background-color: red;
+    border-radius: 50%;
+    width: 25px;
+    height: 25px;
+
+    color: white;
+    font-weight: bold;
+    box-shadow: 0 0 0.5rem red;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.noPendingFollows {
+    display: none;
 }

@@ -39,7 +39,9 @@ function RecentPosts() {
         <div className={styles.recentPosts}>
             {message && <p>{message}</p>}
             <Posts posts={userPosts}/>
-            <Posts posts={followPosts}/>
+            {followPosts.map(f => {
+                return <Posts posts={f.posts} />
+            })}
         </div>
     )
 }

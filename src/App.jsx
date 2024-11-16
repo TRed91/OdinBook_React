@@ -1,7 +1,7 @@
 import './App.css'
 import Header from "./components/header/header.jsx";
 import Footer from "./components/footer/footer.jsx";
-import {Outlet, useNavigate} from "react-router-dom";
+import {Outlet} from "react-router-dom";
 import Sidebar from "./components/sidebar/sidebar.jsx";
 import {useEffect, useState} from "react";
 
@@ -9,7 +9,6 @@ import {useEffect, useState} from "react";
 function App() {
 
     const [user, setUser] = useState(null);
-    const navigate = useNavigate();
 
     useEffect(() => {
         if (!user) {

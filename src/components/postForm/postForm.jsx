@@ -25,6 +25,7 @@ function PostForm () {
             body: JSON.stringify({
                 userId: user.userId,
                 text: text,
+                commentId: commentId,
             })
         })
             .then(res => res.json())

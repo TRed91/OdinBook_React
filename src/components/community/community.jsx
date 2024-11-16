@@ -33,8 +33,8 @@ function Community() {
     return (
         <div className={styles.userCardContainer}>
             {loading ? <p>Loading...</p> :
-            community.map((user) => {
-                return <div key={user.userId}><UserCard user={user} key={user.id} /></div>
+            community.map( c => {
+                return <div key={user.userId}><UserCard userCard={c} activeUser={user}/></div>
             })}
         </div>
     )

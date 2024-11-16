@@ -6,6 +6,7 @@ import RecentPosts from "./components/recentPosts/recentPosts.jsx";
 import PostDetails from "./components/postDetails/postDetails.jsx";
 import PostForm from "./components/postForm/postForm.jsx";
 import Community from "./components/community/community.jsx";
+import Requests from "./components/community/requests.jsx";
 
 const routes = [
     {
@@ -19,6 +20,7 @@ const routes = [
             { path: "posts/:postId", element: <PostDetails /> },
             { path: "new", element: <PostForm /> },
             { path: "community", element: <Community /> },
+            { path: "requests", element: <Requests /> },
         ],
     },
 ];

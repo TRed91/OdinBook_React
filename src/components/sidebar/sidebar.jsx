@@ -1,8 +1,17 @@
 import styles from './sidebar.module.css';
 import {GravatarQuickEditorCore} from "@gravatar-com/quick-editor";
 import PropTypes from "prop-types";
+import {useEffect, useState} from "react";
 
 function Sidebar({user}) {
+
+    const [ pendingFollowCount, setPendingFollowCount ] = useState(0);
+
+    useEffect(() => {
+        if (user) {
+            setPendingFollowCount(user.incomingRequest.length)
+        }
+    }, [user]);
 
     return (
         <>
@@ -27,6 +36,14 @@ function Sidebar({user}) {
                         Community
                     </a>
                 </li>
+                <li>
+                    <a href="/requests">
+                        Follow Requests
+                        {pendingFollowCount > 0 ?
+                            <span className={styles.pendingFollows}>{pendingFollowCount}</span> :
+                            <span className={styles.noPendingFollows}>{pendingFollowCount}</span>}
+                    </a>
+                </li>
                 {user && <li>
                     <a onClick={() => {
                             new GravatarQuickEditorCore({
@@ -48,6 +65,7 @@ Sidebar.propTypes = {
         userName: PropTypes.string.isRequired,
         avatarUrl: PropTypes.string.isRequired,
         email: PropTypes.string.isRequired,
+        incomingRequest: PropTypes.arrayOf(PropTypes.object).isRequired,
     })
 }
 

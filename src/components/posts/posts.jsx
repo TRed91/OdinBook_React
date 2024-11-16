@@ -1,7 +1,5 @@
 import styles from "./posts.module.css";
 import PropTypes from "prop-types";
-import Avatar from "../avatar/avatar.jsx";
-import {useNavigate} from "react-router-dom";
 import PostCard from "./postCard.jsx";
 
 function Posts({posts}) {

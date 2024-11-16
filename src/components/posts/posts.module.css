@@ -13,7 +13,7 @@
 
 .postCard {
     box-sizing: border-box;
-    width: max(50%, 320px);
+    width: max(80%, 320px);
     padding: 1rem;
     border: 1px solid lightgray;
     border-radius: 0.5rem;
