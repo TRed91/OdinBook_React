@@ -22,7 +22,6 @@ function RecentPosts() {
                 .then(res => res.json())
                 .then(data => {
                     if (data.ok) {
-                        console.log(data.data);
                         setUserPosts(data.data.posts);
                         setFollowPosts(data.data.following)
                     } else {
@@ -38,9 +37,11 @@ function RecentPosts() {
     return (
         <div className={styles.recentPosts}>
             {message && <p>{message}</p>}
-            <Posts posts={userPosts}/>
-            {followPosts.map(f => {
-                return <Posts posts={f.posts} />
+            {user && <Posts posts={userPosts} userId={user.userId}/>}
+            {user && followPosts.map(f => {
+                return <div key={Math.random()} className={styles.profilePosts}>
+                    <Posts posts={f.posts} userId={user.userId} />
+                </div>
             })}
         </div>
     )

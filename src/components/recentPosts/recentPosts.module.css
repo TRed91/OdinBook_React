@@ -9,3 +9,8 @@
     flex: 0 0 45%;
     min-width: 350px;
 }
+
+.profilePosts {
+    overflow-y: scroll;
+    scrollbar-width: none;
+}

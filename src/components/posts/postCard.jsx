@@ -16,9 +16,29 @@ const padNumber = (number) => {
     return number < 10 ? `0${number}` : `${number}`;
 }
 
-function PostCard({post , passKey}) {
+function PostCard({post , passKey, userId}) {
 
     const navigate = useNavigate();
+
+    const handleLike = () => {
+        fetch(`http://localhost:3000/like/${post.postId}`, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+                'Authorization': `Bearer ${localStorage.getItem('token')}`,
+            },
+            body: JSON.stringify({
+                userId: userId,
+            })
+        })
+            .then(res => res.json())
+            .then(data => {
+                if (data.ok) {
+                    window.location.reload();
+                }
+            })
+            .catch(err => console.log(err));
+    }
 
     return (
         <div key={passKey} className={styles.postCard}>
@@ -35,7 +55,8 @@ function PostCard({post , passKey}) {
                 <div>
                     Comments: {post._count.comments}
                 </div>
-                <div className={styles.postLikes}>
+                <div className={styles.postLikes}
+                    onClick={handleLike}>
                     Likes: {post._count.likes}
                 </div>
             </div>
@@ -52,6 +73,7 @@ PostCard.propTypes = {
         _count: PropTypes.object.isRequired,
     }),
     passKey: PropTypes.number.isRequired,
+    userId: PropTypes.number.isRequired,
 }
 
 export default PostCard;
