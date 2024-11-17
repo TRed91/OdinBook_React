@@ -75,10 +75,19 @@ function UserCard({ userCard, activeUser }) {
             <div className={styles.userCard}>
                 <Avatar user={userCard} big={false}/>
                 <div className={styles.cardButtonContainer}>
-                    <button onClick={() => navigate(`/profile/${userCard.userId}`)}>Profile</button>
+                    <button onClick={() => navigate(`/profile/${userCard.userId}`)} className={styles.userCardButton}>
+                        <img src="/profile-round-1342-svgrepo-com.svg" width={20} className={"icon"} alt=""/>
+                        Profile
+                    </button>
                     {sentRequest() ? <button className={styles.pending}>Pending</button> :
-                        isFollowing() ? <button onClick={handleUnfollowRequest}>Unfollow</button> :
-                                        <button onClick={handleFollowRequest}>Follow</button>}
+                        isFollowing() ? <button onClick={handleUnfollowRequest} className={styles.userCardButton}>
+                                <img src="/unfollow-svgrepo-com.svg" width={20} className={"icon"} alt=""/>
+                                Unfollow
+                            </button> :
+                            <button onClick={handleFollowRequest} className={styles.userCardButton}>
+                                <img src="/user-follow-svgrepo-com.svg" width={20} className={"icon"} alt=""/>
+                                Follow
+                            </button>}
                 </div>
             </div>
             <div>{message}</div>

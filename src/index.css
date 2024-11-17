@@ -86,3 +86,7 @@ button:focus-visible {
   border-radius: 50%;
   box-shadow: 0 0 10px white;
 }
+
+.icon {
+  filter: invert(100%);
+}

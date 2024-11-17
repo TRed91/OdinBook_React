@@ -58,7 +58,7 @@ function Profile() {
                     <Avatar user={userProfile} big={true} />
                 </div>
                 <div className={styles.profileDetails}>
-                    <img src="" alt=""/>
+                    <img src="/mail-svgrepo-com.svg" width={50} className={"icon"} alt=""/>
                     <p>{userProfile.email}</p>
                 </div>
                 <div className={styles.postsSection}>

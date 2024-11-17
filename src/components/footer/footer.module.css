@@ -6,3 +6,7 @@ footer {
 
     background-color: #2553a4;
 }
+
+.contactElement {
+    transform: translateX(1rem);
+}

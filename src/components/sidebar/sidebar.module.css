@@ -38,6 +38,6 @@
     display: none;
 }
 
-.newPostContainer {
-    position: relative;
+.changeAvatarElement:hover {
+    cursor: pointer;
 }

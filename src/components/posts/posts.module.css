@@ -47,7 +47,15 @@
     font-style: italic;
 }
 
-.postLikes {
+.cardButtons {
+    display: flex;
+    gap: 3rem;
+}
+
+.postComments, .postLikes {
     font-size: 1.2rem;
     font-weight: bold;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
 }

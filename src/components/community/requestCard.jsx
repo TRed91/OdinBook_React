@@ -56,8 +56,14 @@ function RequestCard({userRequest, activeUser}) {
             <div className={styles.userCard}>
                 <Avatar user={userRequest} big={false}/>
                 <div className={styles.cardButtonContainer}>
-                    <button onClick={handleAccept}>Accept</button>
-                    <button onClick={handleDecline}>Decline</button>
+                    <button onClick={handleAccept} className={styles.userCardButton}>
+                        <img src="/checkmark-svgrepo-com.svg" width={20} className={"icon"} alt=""/>
+                        Accept
+                    </button>
+                    <button onClick={handleDecline} className={styles.userCardButton}>
+                        <img src="/xmark-svgrepo-com.svg" width={20} className={"icon"} alt=""/>
+                        Decline
+                    </button>
                 </div>
             </div>
             <div>{message}</div>

@@ -17,26 +17,31 @@ function Sidebar({user}) {
         <>
             <ul className={styles.sidebarContainer}>
                 <li>
+                    <img src="/message-square-medical-svgrepo-com.svg" width={30} className={"icon"} alt=""/>
                     <a href={"/new/0"}>
                         New Post
                     </a>
                 </li>
                 <li>
+                    <img src="/profile-round-1342-svgrepo-com.svg" width={30} className={"icon"} alt=""/>
                     <a href={`/profile/${user.userId}`}>
                         Profile
                     </a>
                 </li>
                 <li>
+                    <img src="/recent-svgrepo-com.svg" width={30} className={"icon"} alt=""/>
                     <a href="/posts">
                         Recent Posts
                     </a>
                 </li>
                 <li>
+                    <img src="/community-group-leader-svgrepo-com.svg" width={30} className={"icon"} alt=""/>
                     <a href="/community">
                         Community
                     </a>
                 </li>
                 <li>
+                    <img src="/user-follow-svgrepo-com.svg" width={30} className={"icon"} alt=""/>
                     <a href="/requests">
                         Follow Requests
                         {pendingFollowCount > 0 ?
@@ -45,14 +50,15 @@ function Sidebar({user}) {
                     </a>
                 </li>
                 {user && <li>
+                    <img src="/gravatar-svgrepo-com.svg" width={30} className={"icon"} alt=""/>
                     <a onClick={() => {
-                            new GravatarQuickEditorCore({
+                        new GravatarQuickEditorCore({
                                 email: user.email,
                                 editorTriggerSelector: '#edit-profile',
                                 avatarSelector: '#gravatar-avatar',
                                 scope: ['avatars'],
                             }).open()
-                    }}>Change Avatar</a>
+                    }} className={styles.changeAvatarElement}>Change Avatar</a>
                 </li>}
             </ul>
         </>

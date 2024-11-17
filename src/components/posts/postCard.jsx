@@ -52,12 +52,14 @@ function PostCard({post, userId}) {
                 <div className={styles.postTime}>
                     {formatDate(post.time)}
                 </div>
-                <div onClick={() => navigate(`/new/${post.postId}`)}>
-                    Comments: {post._count.comments}
-                </div>
-                <div className={styles.postLikes}
-                    onClick={handleLike}>
-                    Likes: {post._count.likes}
+                <div className={styles.cardButtons}>
+                    <div onClick={() => navigate(`/new/${post.postId}`)} className={styles.postComments}>
+                        <img src="/comments-svgrepo-com.svg" width={30} className={"icon"} alt=""/> {post._count.comments}
+                    </div>
+                    <div className={styles.postLikes}
+                        onClick={handleLike}>
+                        <img src="/like-svgrepo-com.svg" width={30} className={"icon"} alt=""/> {post._count.likes}
+                    </div>
                 </div>
             </div>
         </div>

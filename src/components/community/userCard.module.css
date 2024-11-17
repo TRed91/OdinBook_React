@@ -26,6 +26,11 @@
     gap: 1rem;
 }
 
+.userCardButton {
+    display: flex;
+    gap: 0.5rem;
+}
+
 .pending {
     background-color: grey;
 }
