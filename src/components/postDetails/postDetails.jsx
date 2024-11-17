@@ -1,11 +1,13 @@
-import {useParams} from "react-router-dom";
+import {useOutletContext, useParams} from "react-router-dom";
 import {useEffect, useState} from "react";
 import PostCard from "../posts/postCard.jsx";
 import Posts from "../posts/posts.jsx";
 import styles from "./postDetails.module.css";
+import PropTypes from "prop-types";
 
 function PostDetails() {
     const { postId } = useParams();
+    const [ user, setUser ] = useOutletContext();
     const [ post, setPost ] = useState();
     const [ message, setMessage ] = useState("");
 
@@ -33,18 +35,26 @@ function PostDetails() {
         }
     }, [postId]);
 
-    if (post) {
+    if (post && user) {
         return (
             <div className={styles.postDetailsContainer}>
                 <div className={styles.originalPost}>
-                    <PostCard post={post} />
+                    <PostCard post={post} userId={user.userId} />
                 </div>
                 <div className={styles.comments}>
-                    <Posts posts={post.comments}/>
+                    <Posts posts={post.comments} userId={user.userId} />
                 </div>
             </div>
         )
     }
+}
+
+PostDetails.propTypes = {
+    postId: PropTypes.string,
+    post: PropTypes.shape({
+        user: PropTypes.object,
+        comments: PropTypes.array,
+    })
 }
 
 export default PostDetails;

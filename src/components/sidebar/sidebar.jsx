@@ -17,7 +17,7 @@ function Sidebar({user}) {
         <>
             <ul className={styles.sidebarContainer}>
                 <li>
-                    <a href="/new">
+                    <a href={"/new/0"}>
                         New Post
                     </a>
                 </li>

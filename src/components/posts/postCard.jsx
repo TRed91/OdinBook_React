@@ -2,11 +2,13 @@ import styles from "./posts.module.css";
 import Avatar from "../avatar/avatar.jsx";
 import {useNavigate} from "react-router-dom";
 import PropTypes from "prop-types";
+import {useState} from "react";
+import PostForm from "../postForm/postForm.jsx";
 
 const formatDate = (string) => {
     const date = new Date(string);
-    const day = padNumber(date.getDay());
-    const month = padNumber(date.getMonth());
+    const day = padNumber(date.getDate());
+    const month = padNumber(date.getMonth() + 1);
     const hours = padNumber(date.getHours());
     const minutes = padNumber(date.getMinutes());
     return `${day}/${month}/${date.getFullYear()} - ${hours}:${minutes}`;
@@ -16,7 +18,7 @@ const padNumber = (number) => {
     return number < 10 ? `0${number}` : `${number}`;
 }
 
-function PostCard({post , passKey, userId}) {
+function PostCard({post, userId}) {
 
     const navigate = useNavigate();
 
@@ -41,7 +43,7 @@ function PostCard({post , passKey, userId}) {
     }
 
     return (
-        <div key={passKey} className={styles.postCard}>
+        <div className={styles.postCard}>
             <div className={styles.postHeader} onClick={() => navigate(`/posts/${post.postId}`)}>
                 <Avatar user={post.user} big={false}/>
             </div>
@@ -52,7 +54,7 @@ function PostCard({post , passKey, userId}) {
                 <div className={styles.postTime}>
                     {formatDate(post.time)}
                 </div>
-                <div>
+                <div onClick={() => navigate(`/new/${post.postId}`)}>
                     Comments: {post._count.comments}
                 </div>
                 <div className={styles.postLikes}
@@ -72,8 +74,7 @@ PostCard.propTypes = {
         time: PropTypes.string.isRequired,
         _count: PropTypes.object.isRequired,
     }),
-    passKey: PropTypes.number.isRequired,
-    userId: PropTypes.number.isRequired,
+    userId: PropTypes.number,
 }
 
 export default PostCard;

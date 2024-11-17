@@ -5,10 +5,10 @@ import {Outlet} from "react-router-dom";
 import Sidebar from "./components/sidebar/sidebar.jsx";
 import {useEffect, useState} from "react";
 
-
 function App() {
 
     const [user, setUser] = useState(null);
+    const [ hideForm, setHideForm ] = useState(true);
 
     useEffect(() => {
         if (!user) {

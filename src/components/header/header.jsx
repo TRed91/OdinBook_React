@@ -26,7 +26,7 @@ function Header({user, logoutUser}) {
 }
 
 Header.propTypes = {
-    user: PropTypes.object.isRequired,
+    user: PropTypes.object,
     logoutUser: PropTypes.func.isRequired,
 }
 

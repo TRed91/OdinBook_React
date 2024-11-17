@@ -3,10 +3,16 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    width: 100%;
 }
 
 .originalPost {
     display: flex;
     flex-direction: column;
     align-items: center;
+    width: 70%;
+}
+
+.comments {
+    width: 50%;
 }

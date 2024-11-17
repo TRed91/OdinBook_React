@@ -15,7 +15,7 @@ function Posts({posts, userId}) {
 
 Posts.propTypes = {
     posts: PropTypes.array.isRequired,
-    userId: PropTypes.number.isRequired,
+    userId: PropTypes.number,
 }
 
 export default Posts;

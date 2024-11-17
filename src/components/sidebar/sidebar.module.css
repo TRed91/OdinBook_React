@@ -37,3 +37,7 @@
 .noPendingFollows {
     display: none;
 }
+
+.newPostContainer {
+    position: relative;
+}

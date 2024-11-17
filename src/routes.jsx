@@ -18,7 +18,7 @@ const routes = [
             { path: "login", element: <Login /> },
             { path: "signup", element: <Signup /> },
             { path: "posts/:postId", element: <PostDetails /> },
-            { path: "new", element: <PostForm /> },
+            { path: "new/:commentedId", element: <PostForm /> },
             { path: "community", element: <Community /> },
             { path: "requests", element: <Requests /> },
         ],

@@ -1,6 +1,10 @@
 .formContainer {
-    width: 100%;
-    height: 100%;
+    width: 80%;
+    height: 90%;
+    min-width: 325px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .postForm {
@@ -15,8 +19,8 @@
 
 .postInput {
     box-sizing: border-box;
-    width: max(50%, 320px);
-    height: max(50%, 320px);
+    width: 100%;
+    height: 80%;
     max-width: 800px;
 
     resize: none;
