@@ -8,7 +8,7 @@ function RequestCard({userRequest, activeUser}) {
     const [ message, setMessage ] = useState("");
 
     const handleAccept = () => {
-        fetch(`http://localhost:3000/user/${activeUser.userId}/follow/${userRequest.userId}`, {
+        fetch(`https://site--odinbookapi--q2l8yjbfk2dn.code.run/user/${activeUser.userId}/follow/${userRequest.userId}`, {
             method: "PUT",
             headers: {
                 "Content-Type": "application/json",
@@ -30,7 +30,7 @@ function RequestCard({userRequest, activeUser}) {
     }
 
     const handleDecline = () => {
-        fetch(`http://localhost:3000/user/${activeUser.userId}/request/decline/${userRequest.userId}`, {
+        fetch(`https://site--odinbookapi--q2l8yjbfk2dn.code.run/user/${activeUser.userId}/request/decline/${userRequest.userId}`, {
             method: "PUT",
             headers: {
                 "Content-Type": "application/json",

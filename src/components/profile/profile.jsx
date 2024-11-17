@@ -14,7 +14,7 @@ function Profile() {
 
     useEffect(() => {
         if(user){
-            fetch(`http://localhost:3000/post/user/${userId}`, {
+            fetch(`https://site--odinbookapi--q2l8yjbfk2dn.code.run/post/user/${userId}`, {
                 method: "GET",
                 headers: {
                     "Content-Type": "application/json",
@@ -33,7 +33,7 @@ function Profile() {
                     console.log(err.message);
                     setMessage("Oops! Something went wrong!");
                 });
-            fetch(`http://localhost:3000/user/${userId}`, {
+            fetch(`https://site--odinbookapi--q2l8yjbfk2dn.code.run/user/${userId}`, {
                 method: "GET",
                 headers: {
                     "Content-Type": "application/json",

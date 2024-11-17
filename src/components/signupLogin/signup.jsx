@@ -14,7 +14,7 @@ function Signup() {
     const handleSubmit = async(e) => {
         e.preventDefault();
         try {
-            const res = await fetch('http://localhost:3000/user', {
+            const res = await fetch('https://site--odinbookapi--q2l8yjbfk2dn.code.run/user', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',

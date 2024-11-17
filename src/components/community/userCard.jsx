@@ -30,7 +30,7 @@ function UserCard({ userCard, activeUser }) {
     }
 
     const handleFollowRequest = () => {
-        fetch(`http://localhost:3000/user/${activeUser.userId}/request/${userCard.userId}`, {
+        fetch(`https://site--odinbookapi--q2l8yjbfk2dn.code.run/user/${activeUser.userId}/request/${userCard.userId}`, {
             method: "PUT",
             headers: {
                 "Content-Type": "application/json",
@@ -52,7 +52,7 @@ function UserCard({ userCard, activeUser }) {
     }
 
     const handleUnfollowRequest = () => {
-        fetch(`http://localhost:3000/user/${activeUser.userId}/unfollow/${userCard.userId}`, {
+        fetch(`https://site--odinbookapi--q2l8yjbfk2dn.code.run/user/${activeUser.userId}/unfollow/${userCard.userId}`, {
             method: "PUT",
             headers: {
                 "Content-Type": "application/json",

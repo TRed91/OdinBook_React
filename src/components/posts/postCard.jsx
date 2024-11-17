@@ -21,7 +21,7 @@ function PostCard({post, userId}) {
     const navigate = useNavigate();
 
     const handleLike = () => {
-        fetch(`http://localhost:3000/like/${post.postId}`, {
+        fetch(`https://site--odinbookapi--q2l8yjbfk2dn.code.run/like/${post.postId}`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',

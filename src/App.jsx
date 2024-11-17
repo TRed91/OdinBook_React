@@ -11,7 +11,7 @@ function App() {
 
     useEffect(() => {
         if (!user) {
-            fetch('http://localhost:3000/login', {
+            fetch('https://site--odinbookapi--q2l8yjbfk2dn.code.run/login', {
                 method: 'GET',
                 headers: {
                     'Content-Type': 'application/json',

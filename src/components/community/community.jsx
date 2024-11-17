@@ -11,7 +11,7 @@ function Community() {
 
     useEffect(() => {
         if (user) {
-            fetch(`http://localhost:3000/user/`, {
+            fetch(`https://site--odinbookapi--q2l8yjbfk2dn.code.run/user/`, {
                 method: "GET",
                 headers: {
                     "Content-Type": "application/json",

@@ -12,7 +12,7 @@ function RecentPosts() {
 
     useEffect(() => {
         if (user) {
-            fetch(`http://localhost:3000/post/recent/${user.userId}`, {
+            fetch(`https://site--odinbookapi--q2l8yjbfk2dn.code.run/post/recent/${user.userId}`, {
                 method: "GET",
                 headers: {
                     "Content-Type": "application/json",

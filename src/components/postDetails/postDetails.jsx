@@ -12,7 +12,7 @@ function PostDetails() {
 
     useEffect(() => {
         if (postId) {
-            fetch(`http://localhost:3000/post/${postId}`, {
+            fetch(`https://site--odinbookapi--q2l8yjbfk2dn.code.run/post/${postId}`, {
                 method: "GET",
                 headers: {
                     "Content-Type": "application/json",

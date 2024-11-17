@@ -13,7 +13,7 @@ function PostForm () {
 
     useEffect(() => {
         if (commentedId > 0) {
-            fetch(`http://localhost:3000/post/${commentedId}`, {
+            fetch(`https://site--odinbookapi--q2l8yjbfk2dn.code.run/post/${commentedId}`, {
                 method: "GET",
                 headers: {
                     "Content-Type": "application/json",
@@ -37,7 +37,7 @@ function PostForm () {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        fetch(`http://localhost:3000/post/`, {
+        fetch(`https://site--odinbookapi--q2l8yjbfk2dn.code.run/post/`, {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
