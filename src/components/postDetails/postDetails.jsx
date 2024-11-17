@@ -9,7 +9,6 @@ function PostDetails() {
     const { postId } = useParams();
     const [ user, setUser ] = useOutletContext();
     const [ post, setPost ] = useState();
-    const [ message, setMessage ] = useState("");
 
     useEffect(() => {
         if (postId) {
@@ -24,13 +23,10 @@ function PostDetails() {
                 .then(data => {
                     if (data.ok) {
                         setPost(data.data);
-                    } else {
-                        setMessage(data.message);
                     }
                 })
                 .catch(err => {
                     console.log(err.message);
-                    setMessage("Oops! Something went wrong!");
                 });
         }
     }, [postId]);

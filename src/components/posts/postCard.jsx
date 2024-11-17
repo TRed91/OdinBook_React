@@ -2,8 +2,6 @@ import styles from "./posts.module.css";
 import Avatar from "../avatar/avatar.jsx";
 import {useNavigate} from "react-router-dom";
 import PropTypes from "prop-types";
-import {useState} from "react";
-import PostForm from "../postForm/postForm.jsx";
 
 const formatDate = (string) => {
     const date = new Date(string);

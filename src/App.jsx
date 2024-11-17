@@ -8,7 +8,6 @@ import {useEffect, useState} from "react";
 function App() {
 
     const [user, setUser] = useState(null);
-    const [ hideForm, setHideForm ] = useState(true);
 
     useEffect(() => {
         if (!user) {
