@@ -1,13 +1,14 @@
 import './App.css'
 import Header from "./components/header/header.jsx";
 import Footer from "./components/footer/footer.jsx";
-import {Outlet} from "react-router-dom";
+import {Outlet, useNavigate} from "react-router-dom";
 import Sidebar from "./components/sidebar/sidebar.jsx";
 import {useEffect, useState} from "react";
 
 function App() {
 
     const [user, setUser] = useState(null);
+    const navigate = useNavigate();
 
     useEffect(() => {
         if (!user) {
@@ -22,6 +23,8 @@ function App() {
                 .then(data => {
                     if (data.ok) {
                         setUser(data.data);
+                    } else {
+                        navigate('/login');
                     }
                 })
                 .catch(err => console.log(err));
