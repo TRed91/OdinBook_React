@@ -1,6 +1,6 @@
 import {useNavigate} from "react-router-dom";
 import PropTypes from "prop-types";
-import styles from "./Header.module.css";
+import styles from "./header.module.css";
 
 function Header({user, logoutUser}) {
     const navigate = useNavigate();
