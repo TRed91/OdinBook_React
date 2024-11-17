@@ -34,3 +34,15 @@
 .pending {
     background-color: grey;
 }
+
+@media only screen and (max-width: 500px) {
+    .userCardContainer {
+        width: 100vw;
+        padding: 0;
+        align-self: flex-start;
+    }
+
+    .userCardButtonText {
+        display: none;
+    }
+}

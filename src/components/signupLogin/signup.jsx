@@ -1,9 +1,10 @@
 import styles from './signupLogin.module.css';
 import {useState} from "react";
-import {useNavigate} from "react-router-dom";
+import {useNavigate, useOutletContext} from "react-router-dom";
 
 function Signup() {
 
+    const [ user, setUser ] = useOutletContext();
     const [ username, setUsername ] = useState('');
     const [ email, setEmail ] = useState('');
     const [ password, setPassword ] = useState('');
@@ -36,6 +37,10 @@ function Signup() {
             console.log(error.message);
             setMessage("Oops! Something went wrong!");
         }
+    }
+
+    if (user){
+        return navigate(`/profile/${user.userId}`);
     }
 
     return (

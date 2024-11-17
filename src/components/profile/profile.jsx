@@ -1,4 +1,4 @@
-import {useOutletContext, useParams} from "react-router-dom";
+import {useNavigate, useOutletContext, useParams} from "react-router-dom";
 import styles from "./profile.module.css";
 import {useEffect, useState} from "react";
 import Posts from "../posts/posts.jsx";
@@ -10,7 +10,8 @@ function Profile() {
     const [ user, setUser ] = useOutletContext();
     const [ userProfile, setUserProfile ] = useState();
     const [posts, setPosts] = useState([])
-    const [message, setMessage] = useState("")
+    const [message, setMessage] = useState("");
+    const navigate = useNavigate();
 
     useEffect(() => {
         if(user){

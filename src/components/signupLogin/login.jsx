@@ -37,6 +37,9 @@ function Login() {
         }
     }
 
+    if (user){
+        return navigate(`/profile/${user.userId}`);
+    }
     return (
         <div>
             <form onSubmit={handleSubmit}>

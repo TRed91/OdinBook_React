@@ -77,16 +77,16 @@ function UserCard({ userCard, activeUser }) {
                 <div className={styles.cardButtonContainer}>
                     <button onClick={() => navigate(`/profile/${userCard.userId}`)} className={styles.userCardButton}>
                         <img src="/profile-round-1342-svgrepo-com.svg" width={20} className={"icon"} alt=""/>
-                        Profile
+                        <span className={styles.userCardButtonText}>Profile</span>
                     </button>
                     {sentRequest() ? <button className={styles.pending}>Pending</button> :
                         isFollowing() ? <button onClick={handleUnfollowRequest} className={styles.userCardButton}>
                                 <img src="/unfollow-svgrepo-com.svg" width={20} className={"icon"} alt=""/>
-                                Unfollow
+                                <span className={styles.userCardButtonText}>Unfollow</span>
                             </button> :
                             <button onClick={handleFollowRequest} className={styles.userCardButton}>
                                 <img src="/user-follow-svgrepo-com.svg" width={20} className={"icon"} alt=""/>
-                                Follow
+                                <span className={styles.userCardButtonText}>Follow</span>
                             </button>}
                 </div>
             </div>

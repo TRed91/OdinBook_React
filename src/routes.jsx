@@ -13,9 +13,10 @@ const routes = [
         path: "/",
         element: <App />,
         children: [
-            { index: true, path: "profile/:userId", element: <Profile /> },
-            { path: "posts", element: <RecentPosts /> },
+            { index: true , element: <Login /> },
             { path: "login", element: <Login /> },
+            { path: "profile/:userId", element: <Profile /> },
+            { path: "posts", element: <RecentPosts /> },
             { path: "signup", element: <Signup /> },
             { path: "posts/:postId", element: <PostDetails /> },
             { path: "new/:commentedId", element: <PostForm /> },

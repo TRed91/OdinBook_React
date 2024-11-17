@@ -14,3 +14,10 @@
     overflow-y: scroll;
     scrollbar-width: none;
 }
+
+@media only screen and (max-width: 500px) {
+    .recentPosts {
+        flex-direction: column;
+        height: fit-content;
+    }
+}

@@ -23,8 +23,6 @@ function App() {
                 .then(data => {
                     if (data.ok) {
                         setUser(data.data);
-                    } else {
-                        navigate('/login');
                     }
                 })
                 .catch(err => console.log(err));
