@@ -20,4 +20,8 @@
         flex-direction: column;
         height: fit-content;
     }
+
+    .recentPosts > * {
+        flex: 1
+    }
 }
