@@ -23,7 +23,7 @@ function RecentPosts() {
                 .then(data => {
                     if (data.ok) {
                         setUserPosts(data.data.posts);
-                        setFollowPosts(data.data.following)
+                        uniteFollowPosts(data.data.following);
                     } else {
                         setMessage(data.message);
                     }
@@ -34,15 +34,26 @@ function RecentPosts() {
         }
     }, [user])
 
+    function uniteFollowPosts(following) {
+        const postsArray = [];
+        following.forEach(f => {
+           f.posts.forEach(post => {
+               postsArray.push(post);
+           })
+        });
+        postsArray.sort((a, b) => {
+            const aDate = new Date(a.time);
+            const bDate = new Date(b.time);
+            return bDate - aDate;
+        })
+        setFollowPosts(postsArray);
+    }
+
     return (
         <div className={styles.recentPosts}>
             {message && <p>{message}</p>}
             {user && <Posts posts={userPosts} userId={user.userId}/>}
-            {user && followPosts.map(f => {
-                return <div key={Math.random()} className={styles.profilePosts}>
-                    <Posts posts={f.posts} userId={user.userId} />
-                </div>
-            })}
+            {user && <Posts posts={followPosts} userId={user.userId} />}
         </div>
     )
 }
