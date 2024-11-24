@@ -1,27 +1,50 @@
+.recentPostsContainer {
+    display: flex;
+    width: 100%;
+    height: 75vh;
+}
+
 .recentPosts {
     box-sizing: border-box;
     display: flex;
-    width: 90%;
-    max-height: 75vh;
+    flex-direction: column;
+    padding: 1rem;
+    width: 100%;
+    height: 100%;
 }
 
 .recentPosts > * {
-    flex: 0 0 45%;
     min-width: 350px;
 }
 
-.profilePosts {
-    overflow-y: scroll;
-    scrollbar-width: none;
+.section {
+    border-bottom: 1px solid #4b68a1;
+    padding-bottom: 0.5rem;
 }
 
 @media only screen and (max-width: 500px) {
+    .recentPostsContainer {
+        flex-direction: column;
+    }
     .recentPosts {
         flex-direction: column;
         height: fit-content;
+        width: 100%;
+        overflow-y: hidden;
+        border-bottom: 1px solid #4b68a1;
+    }
+}
+
+@media only screen and (max-width: 800px) {
+    .recentPostsContainer {
+        flex-direction: column;
     }
 
-    .recentPosts > * {
-        flex: 1
+    .recentPosts {
+        flex-direction: column;
+        height: fit-content;
+        width: 100%;
+        overflow-y: hidden;
+        border-bottom: 1px solid #4b68a1;
     }
 }

@@ -1,5 +1,4 @@
 .profilePosts {
-    flex: 0 0 75%;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -14,7 +13,7 @@
 
 .postCard {
     box-sizing: border-box;
-    width: max(80%, 320px);
+    width: max(30%, 320px);
     padding: 1rem;
     border: 1px solid lightgray;
     border-radius: 0.5rem;
@@ -45,6 +44,7 @@
 
 .postTime {
     font-style: italic;
+    align-self: flex-start;
 }
 
 .cardButtons {

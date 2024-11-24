@@ -45,19 +45,21 @@ function PostCard({post, userId}) {
             <div className={styles.postHeader} onClick={() => navigate(`/posts/${post.postId}`)}>
                 <Avatar user={post.user} big={false}/>
             </div>
+            <div className={styles.postTime}>
+                {formatDate(post.time)}
+            </div>
             <div className={styles.postText} onClick={() => navigate(`/posts/${post.postId}`)}>
                 {post.text}
             </div>
             <div className={styles.postOptions}>
-                <div className={styles.postTime}>
-                    {formatDate(post.time)}
-                </div>
+
                 <div className={styles.cardButtons}>
                     <div onClick={() => navigate(`/new/${post.postId}`)} className={styles.postComments}>
-                        <img src="/comments-svgrepo-com.svg" width={30} className={"icon"} alt=""/> {post._count.comments}
+                        <img src="/comments-svgrepo-com.svg" width={30} className={"icon"}
+                             alt=""/> {post._count.comments}
                     </div>
                     <div className={styles.postLikes}
-                        onClick={handleLike}>
+                         onClick={handleLike}>
                         <img src="/like-svgrepo-com.svg" width={30} className={"icon"} alt=""/> {post._count.likes}
                     </div>
                 </div>

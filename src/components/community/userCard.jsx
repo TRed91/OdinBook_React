@@ -71,7 +71,7 @@ function UserCard({ userCard, activeUser }) {
     }
 
     return (
-        <div>
+        <>
             <div className={styles.userCard}>
                 <Avatar user={userCard} big={false}/>
                 <div className={styles.cardButtonContainer}>
@@ -91,7 +91,7 @@ function UserCard({ userCard, activeUser }) {
                 </div>
             </div>
             <div>{message}</div>
-        </div>
+        </>
     )
 }
 

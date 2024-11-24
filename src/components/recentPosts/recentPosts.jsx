@@ -50,10 +50,16 @@ function RecentPosts() {
     }
 
     return (
-        <div className={styles.recentPosts}>
+        <div className={styles.recentPostsContainer}>
             {message && <p>{message}</p>}
-            {user && <Posts posts={userPosts} userId={user.userId}/>}
-            {user && <Posts posts={followPosts} userId={user.userId} />}
+            <div className={styles.recentPosts}>
+                <h2 className={styles.section}>Your posts</h2>
+                {user && <Posts posts={userPosts} userId={user.userId}/>}
+            </div>
+            <div className={styles.recentPosts}>
+                <h2 className={styles.section}>Users you follow</h2>
+                {user && <Posts posts={followPosts} userId={user.userId} />}
+            </div>
         </div>
     )
 }

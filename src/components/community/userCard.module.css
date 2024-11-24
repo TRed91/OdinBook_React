@@ -5,18 +5,23 @@
     gap: 0.5em;
     border-radius: 0.5em;
     box-shadow: 0 0 0.5em #4b68a1;
+    min-width: 400px;
 }
 
 .userCardContainer {
     padding: 1em;
 
-    width: 30%;
+    width: 100%;
+    height: 75vh;
 
     align-self: flex-start;
 
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
+
+    overflow: scroll;
+    scrollbar-width: none;
 
     gap: 1em;
 }
@@ -40,9 +45,30 @@
         width: 100vw;
         padding: 0;
         align-self: flex-start;
+
+        flex-wrap: nowrap;
     }
 
     .userCardButtonText {
         display: none;
+    }
+}
+
+@media only screen and (max-width: 1000px) {
+    .userCardContainer {
+        width: 100%;
+        padding: 0;
+
+        flex-wrap: nowrap;
+    }
+
+    .userCardButtonText {
+        display: none;
+    }
+}
+
+@media only screen and (min-width: 3000px) {
+    .userCardContainer {
+        width: 60%;
     }
 }
