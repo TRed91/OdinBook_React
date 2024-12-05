@@ -5,15 +5,15 @@ import PostCard from "../posts/postCard.jsx";
 
 function PostForm () {
 
-    const { commentedId } = useParams();
+    const { postId } = useParams();
     const [ user, setUser ] = useOutletContext();
     const [ text, setText ] = useState('');
     const [ message, setMessage ] = useState(null);
     const [ post, setPost ] = useState(null);
 
     useEffect(() => {
-        if (commentedId > 0) {
-            fetch(`https://site--odinbookapi--q2l8yjbfk2dn.code.run/post/${commentedId}`, {
+        if (postId > 0) {
+            fetch(`https://site--odinbookapi--q2l8yjbfk2dn.code.run/post/${postId}`, {
                 method: "GET",
                 headers: {
                     "Content-Type": "application/json",
@@ -27,10 +27,9 @@ function PostForm () {
                     }
                 }).catch(err => console.log(err));
         }
-    }, [commentedId]);
+    }, [postId]);
 
     const handleInputChange = e => {
-        console.log(commentedId);
         setMessage(null);
         setText(e.target.value);
     }
@@ -46,7 +45,7 @@ function PostForm () {
             body: JSON.stringify({
                 userId: user.userId,
                 text: text,
-                commentedId: commentedId === '0' ? null : commentedId,
+                commentedId: postId === '0' ? null : postId,
             })
         })
             .then(res => res.json())

@@ -7,6 +7,7 @@ import PostDetails from "./components/postDetails/postDetails.jsx";
 import PostForm from "./components/postForm/postForm.jsx";
 import Community from "./components/community/community.jsx";
 import Requests from "./components/community/requests.jsx";
+import PostEdit from "./components/postForm/postEdit.jsx";
 
 const routes = [
     {
@@ -19,7 +20,8 @@ const routes = [
             { path: "posts", element: <RecentPosts /> },
             { path: "signup", element: <Signup /> },
             { path: "posts/:postId", element: <PostDetails /> },
-            { path: "new/:commentedId", element: <PostForm /> },
+            { path: "new/:postId", element: <PostForm /> },
+            { path: "edit/:postId", element: <PostEdit />},
             { path: "community", element: <Community /> },
             { path: "requests", element: <Requests /> },
         ],

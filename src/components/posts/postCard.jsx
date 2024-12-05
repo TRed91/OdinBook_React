@@ -40,6 +40,8 @@ function PostCard({post, userId}) {
             .catch(err => console.log(err));
     }
 
+
+
     return (
         <div className={styles.postCard}>
             <div className={styles.postHeader} onClick={() => navigate(`/posts/${post.postId}`)}>
@@ -52,7 +54,9 @@ function PostCard({post, userId}) {
                 {post.text}
             </div>
             <div className={styles.postOptions}>
-
+                <div>
+                    <a onClick={() => navigate(`/edit/${post.postId}`)}>Edit</a>
+                </div>
                 <div className={styles.cardButtons}>
                     <div onClick={() => navigate(`/new/${post.postId}`)} className={styles.postComments}>
                         <img src="/comments-svgrepo-com.svg" width={30} className={"icon"}
