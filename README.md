@@ -4,7 +4,7 @@
 
 ![Screenshot of the app interface](public/OdinBook_SC_small.jpg)
 
-## Implementastion
+## Implementation
 The frontend for the Odin Bool application is implemented using Vite + React and Javascript.
 It is designed as an SPA using React Router.
 
