@@ -2,7 +2,7 @@
 
 [Link](https://odinbook-react.pages.dev/)
 
-![Screenshot of the app interface](https://www.imagehost.at/image/MSYje)
+![Screenshot of the app interface](public/OdinBook_SC_small.jpg)
 
 ## Implementastion
 The frontend for the Odin Bool application is implemented using Vite + React and Javascript.
