@@ -1,8 +1,15 @@
-# React + Vite
+# Odin Book - Front End
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+[Link](https://odinbook-react.pages.dev/)
+![Screenshot of the app interface](https://imgur.com/BOybeUy)
 
-Currently, two official plugins are available:
+## Implementastion
+The frontend for the Odin Bool application is implemented using Vite + React and Javascript.
+It is designed as an SPA using React Router.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+It communicates with the [Odin Book Rest Api](https://github.com/TRed91/OdinBook_API "Odin Book API Github") for any CRUD operations.
+User authentication and validation is performed on the API Server.
+
+### Authentication
+On successful Signup or Login a JWS Token is returned by the API. 
+The front end then stores the token in the users local storage.
